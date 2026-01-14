@@ -1,0 +1,817 @@
+{
+	"info": {
+		"_postman_id": "f5e74dfd-7aae-4503-9821-436345d41c5d",
+		"name": "book-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31589163",
+		"_collection_link": "https://martian-station-59857.postman.co/workspace/Himanshu~ddadd763-0a52-43d3-b3c3-570a2ccb845b/collection/31589163-f5e74dfd-7aae-4503-9821-436345d41c5d?action=share&source=collection_link&creator=31589163"
+	},
+	"item": [
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "createBook",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Think Like a Monk: Train Your Mind for Peace and Purpose Every Day\",\r\n    \"author\": \"Jay Shetty\",\r\n    \"publishedYear\": 2020\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"book"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"You Can Win\",\r\n    \"author\": \"Shiv Khera\",\r\n    \"publishedYear\": 2014\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/book",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "181"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b5-qJQ0p4hwMH5O3NpMtGzqQ1Pauo0\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jan 2026 18:42:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Book created successfully\",\n    \"status\": 200,\n    \"notify\": true,\n    \"data\": {\n        \"title\": \"You Can Win\",\n        \"author\": \"Shiv Khera\",\n        \"publishedYear\": 2014,\n        \"_id\": \"69654083d456b9ad1d1b92cf\",\n        \"__v\": 0\n    }\n}"
+								},
+								{
+									"name": "Unsuccessful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Think Like a Monk: Train Your Mind for Peace and Purpose Every Day\",\r\n    \"author\": \"Jay Shetty\",\r\n    \"publishedYear\": 2020\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/book",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "73"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"49-vmLd7cn8P4ZEAE/sL1GQEqRbApQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jan 2026 20:31:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Book already exists\",\n    \"status\": 400,\n    \"notify\": false,\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Bulk upload",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/himan/Downloads/famous_novels_books.csv"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/book/import",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"book",
+										"import"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/himan/Downloads/books - Sheet1.csv"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/book",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "142"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"8e-YVTa0D6J3+Hje4ybOJT3+Opt+Nc\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 13 Jan 2026 13:54:53 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Internal Server Error\",\n    \"status\": 500,\n    \"notify\": false,\n    \"data\": \"Cannot destructure property 'title' of 'req.body' as it is undefined.\"\n}"
+								},
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/himan/Downloads/famous_novels_books.csv"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/book/import",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book",
+												"import"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "108"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6c-mfyCltIbFmMHSQ4DTc4tnDthO2s\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 13 Jan 2026 15:14:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Books imported successfully\",\n    \"status\": 200,\n    \"notify\": true,\n    \"data\": {\n        \"addedBooks\": 10,\n        \"totalRows\": 10\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get",
+					"item": [
+						{
+							"name": "getAllBooks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"book"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/book",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "505"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f9-+w/qsKZVxn33BJV6vBU4cJxuBKA\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jan 2026 18:59:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Books retrieved successfully\",\n    \"status\": 200,\n    \"notify\": true,\n    \"data\": [\n        {\n            \"_id\": \"696544859f1e308484697524\",\n            \"title\": \"Think Like a Monk: Train Your Mind for Peace and Purpose Every Day\",\n            \"author\": \"Jay Shetty\",\n            \"publishedYear\": 2020,\n            \"createdAt\": \"2026-01-12T18:59:17.844Z\",\n            \"updatedAt\": \"2026-01-12T18:59:17.844Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69654358b5aed1cb5312ca86\",\n            \"title\": \"You Can Win\",\n            \"author\": \"Shiv Khera\",\n            \"publishedYear\": 2014,\n            \"createdAt\": \"2026-01-12T18:54:16.795Z\",\n            \"updatedAt\": \"2026-01-12T18:54:16.795Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "getSingleBook",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/book/69654358b5aed1cb5312ca86",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"book",
+										"69654358b5aed1cb5312ca86"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unsuccessful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/book/69654358b5aed1cb5312ca86",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book",
+												"69654358b5aed1cb5312ca86"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Security-Policy",
+											"value": "default-src 'none'"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "172"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jan 2026 19:01:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Cannot GET /api/book/69654358b5aed1cb5312ca86</pre>\n    </body>\n</html>"
+								},
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/book/69655904b718ab632a5ce225",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book",
+												"69655904b718ab632a5ce225"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "261"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"105-D9zf5B09Zgs5z2Iw6QV5Lh3zP7M\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jan 2026 19:03:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Book retrieved successfully\",\n    \"status\": 200,\n    \"notify\": true,\n    \"data\": {\n        \"_id\": \"69654358b5aed1cb5312ca86\",\n        \"title\": \"You Can Win\",\n        \"author\": \"Shiv Khera\",\n        \"publishedYear\": 2014,\n        \"createdAt\": \"2026-01-12T18:54:16.795Z\",\n        \"updatedAt\": \"2026-01-12T18:54:16.795Z\",\n        \"__v\": 0\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "put",
+					"item": [
+						{
+							"name": "Edit Book",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"publishedYear\": 2011\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/book/69654e0c6e5a2552d9eddad5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"book",
+										"69654e0c6e5a2552d9eddad5"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"publishedYear\": 2013\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/book/69655904b718ab632a5ce225",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book",
+												"69655904b718ab632a5ce225"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "259"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"103-bTQmK4wYQ6ov2T/TvHE1ax6Ouz8\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jan 2026 20:21:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Book updated successfully\",\n    \"status\": 200,\n    \"notify\": true,\n    \"data\": {\n        \"_id\": \"69654e0c6e5a2552d9eddad5\",\n        \"title\": \"You Can Win\",\n        \"author\": \"Shiv Khera\",\n        \"publishedYear\": 2011,\n        \"createdAt\": \"2026-01-12T19:39:56.990Z\",\n        \"updatedAt\": \"2026-01-12T20:21:17.211Z\",\n        \"__v\": 0\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "Delete Book",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/book/69655904b718ab632a5ce225",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"book",
+										"69655904b718ab632a5ce225"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/book/69654358b5aed1cb5312ca86",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"book",
+												"69654358b5aed1cb5312ca86"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000,http://example.com"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "54"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"36-9Wsh+Ulh36Uhq6ylxG5pCkcdTlA\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jan 2026 19:39:13 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Book deleted successfully\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
